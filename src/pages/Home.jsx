@@ -104,7 +104,7 @@ const Home = () => {
 
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 text-center text-blue-700">
-          🚀 Crypto Launch Tracker
+          🚀 Market Mint Dasboard
         </h1>
 
         {/* Search, Filter, Refresh */}
