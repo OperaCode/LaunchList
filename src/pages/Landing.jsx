@@ -1,67 +1,103 @@
-import React from 'react'
-import { RocketLaunchIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
-import { Link } from 'react-router-dom';
+import React from "react";
+import { RocketLaunchIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
-
+const features = [
+  {
+    title: "Live Market Data",
+    description: "Access real-time prices, market cap, and 24-hour performance.",
+    icon: "📊",
+  },
+  {
+    title: "Trending Coins",
+    description: "Explore what’s hot — updated daily from global search trends.",
+    icon: "🔥",
+  },
+  {
+    title: "Smart Sorting",
+    description: "Filter tokens by volume, gains, or name to find what matters.",
+    icon: "⚙️",
+  },
+];
 
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
+    <div className="min-h-screen bg-white text-gray-800">
       {/* Header */}
-      <header className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold flex items-center gap-2">
-            <RocketLaunchIcon className="h-6 w-6 text-blue-600" />
-            LaunchList
-          </h1>
-          <Link
-            to="/projects"
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-          >
-            Explore Projects
-          </Link>
-        </div>
+      <header className="flex items-center bg-blue-700 justify-between p-6 mx-auto">
+        <h1 className="text-2xl text-white font-bold">🌿 MarketMint</h1>
+        <Link to="/home">
+          <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-white font-medium flex items-center gap-2">
+            <RocketLaunchIcon className="w-5 h-5" />
+            Launch Dashboard
+          </button>
+        </Link>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-100 to-blue-200 py-20 px-4 text-center">
-        <h2 className="text-4xl font-bold mb-4">Discover the Next Big Thing in Web3</h2>
-        <p className="text-lg mb-6 max-w-2xl mx-auto">
-          Stay ahead of the curve by tracking live token launches, IDOs, and ICOs across top launchpads. Powered by real-time data from CoinMarketCap and CryptoRank.
-        </p>
-        <Link
-          to="/projects"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition"
-        >
-          View Upcoming Launches <ArrowRightIcon className="w-5 h-5" />
-        </Link>
+      <section className="bg-blue-700 text-white py-20 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+            Mint the Market. Track Crypto Trends Instantly.
+          </h1>
+          <p className="text-lg sm:text-xl mb-6">
+            Discover live market data, follow trending coins, and spot the next crypto breakout — all in one place.
+          </p>
+          <Link
+            to="/home"
+            className="inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition"
+          >
+            Enter App →
+          </Link>
+        </div>
       </section>
 
-      {/* Features */}
-      <section className="py-16 px-4 max-w-6xl mx-auto">
-        <h3 className="text-2xl font-bold text-center mb-10">Why Use LaunchList?</h3>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded shadow">
-            <h4 className="font-bold mb-2">Live Token Sales</h4>
-            <p>Track verified upcoming ICOs, IDOs, and private rounds from trusted sources.</p>
+      {/* Features Section */}
+      <section className="py-16 px-6 bg-gray-50">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Why MarketMint?</h2>
+          <p className="text-gray-600 mb-10">
+            MarketMint pulls fresh data from CoinGecko so you're always in sync with the crypto pulse.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-8 text-left">
+            {features.map((f, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-xl shadow hover:shadow-md transition"
+              >
+                <div className="text-3xl mb-3">{f.icon}</div>
+                <h3 className="font-semibold text-lg mb-1">{f.title}</h3>
+                <p className="text-gray-600">{f.description}</p>
+              </div>
+            ))}
           </div>
-          <div className="bg-white p-6 rounded shadow">
-            <h4 className="font-bold mb-2">Multi-Chain Insights</h4>
-            <p>Discover new projects across Ethereum, Solana, BNB Chain, and more.</p>
-          </div>
-          <div className="bg-white p-6 rounded shadow">
-            <h4 className="font-bold mb-2">Launchpad Filters</h4>
-            <p>Easily filter projects by launchpad, category, or raise amount.</p>
-          </div>
+        </div>
+      </section>
+
+      {/* Preview Section */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">See What's Trending 🔍</h2>
+          <p className="text-gray-600 mb-6">
+            Get a live snapshot of top searched coins and market movers — powered by real-time data.
+          </p>
+          <Link
+            to="/home"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow hover:bg-blue-700 transition"
+          >
+            Start Exploring →
+          </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-white py-6 text-center text-sm text-gray-500 border-t">
-        &copy; {new Date().getFullYear()} LaunchList. Built for Web3 explorers.
+      <footer className="bg-gray-100 text-center py-6 mt-10 border-t">
+        <p className="text-gray-500 text-sm">
+          &copy; {new Date().getFullYear()} MarketMint — Crafted with 💡 & 💻
+        </p>
       </footer>
     </div>
   );
-}
+};
 
-export default Landing
+export default Landing;
