@@ -94,10 +94,10 @@ const Home = () => {
       {/* Header */}
       <header className="flex items-center bg-blue-700 justify-between p-6 rounded-xl shadow text-white mb-6">
         <h1 className="text-2xl font-bold">🧊 MarketMint</h1>
-        <Link to="/home">
+        <Link to="/">
           <button className="bg-white text-blue-700 hover:bg-gray-100 px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition">
             <RocketLaunchIcon className="w-5 h-5" />
-            Launch Dashboard
+           Go Back 
           </button>
         </Link>
       </header>
